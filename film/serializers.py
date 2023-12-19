@@ -32,7 +32,18 @@ class KinoSerializer(serializers.ModelSerializer):
         kino.update({"izohlar soni": instance.izoh_set.all().count()})
         return kino
 
+
 class KinoQoshSerializer(serializers.ModelSerializer):
     class Meta:
         model=Kino
         fields='__all__'
+
+class IzohSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=Izoh
+        fields='__all__'
+
+class AktyorModelSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Aktyor
+        fields = '__all__'
